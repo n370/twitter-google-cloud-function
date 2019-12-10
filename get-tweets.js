@@ -1,7 +1,7 @@
 var qs = require('querystring');
 var axios = require('axios');
-var consumerKey = qs.escape('');
-var consumerSecret = qs.escape('');
+var consumerKey = qs.escape(process.env.API_KEY);
+var consumerSecret = qs.escape(process.env.API_SECRET_KEY);
 var bearerCredentials = Buffer.from(consumerKey + ':' + consumerSecret, 'utf8').toString('base64');
 
 module.exports = function(req, res) {
